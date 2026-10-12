@@ -24,7 +24,6 @@ namespace cs_foundation_1
 
             float heal = Math.Min(MaxHealth - Health, 70);
             Health += heal;
-            bag.RemoveItem("药水");
             Console.WriteLine(" ");
             Console.WriteLine("玩家使用了一瓶药水！");
             Console.WriteLine($"恢复了{heal}点HP，当前HP：{Health}/{MaxHealth}");

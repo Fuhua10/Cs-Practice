@@ -1,5 +1,4 @@
 [Oo]bj/
 
+bin/
 .vs/
-*.csproj
-*.slnx
