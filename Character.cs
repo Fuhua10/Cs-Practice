@@ -24,10 +24,9 @@ namespace cs_foundation_1
         {
             if (Health > 0)
             {
-
                 Console.WriteLine(" ");
                 Console.WriteLine($"{Name}发动攻击！");
-                Console.WriteLine($"{character.Name}受到{character.Damage(AttackPower)}伤害，剩余血量：{character.Health}/{character.MaxHealth}");
+                Console.WriteLine($"{character.Name}受到{character.Damage(AttackPower + Random.Shared.Next(-3,4))}伤害，剩余血量：{character.Health}/{character.MaxHealth}");
             }
 
         }

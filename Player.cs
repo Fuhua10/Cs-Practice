@@ -17,15 +17,19 @@ namespace cs_foundation_1
             Console.WriteLine($"背包容量：{bag.Count}/{bag.MaxCapacity}");
         }
 
-        public float Heal()
+        public bool TryHeal()
         {
+            if (Health >= MaxHealth) return false;
+            if(!bag.RemoveItem("药水"))return false;
+
             float heal = Math.Min(MaxHealth - Health, 70);
             Health += heal;
             bag.RemoveItem("药水");
             Console.WriteLine(" ");
             Console.WriteLine("玩家使用了一瓶药水！");
             Console.WriteLine($"恢复了{heal}点HP，当前HP：{Health}/{MaxHealth}");
-            return heal;
+            return true;
+
         }
 
     }

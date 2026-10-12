@@ -30,16 +30,18 @@ namespace cs_foundation_1
 		}
 		public bool RemoveItem(string itemName)
 		{
-			if (itemsDic.TryGetValue(itemName, out int value))
+			if (!items.Remove(itemName))
 			{
-				itemsDic[itemName]--;
-				if (itemsDic[itemName] == 0)
-				{
-					itemsDic.Remove(itemName);
-				}
+				return false;
 			}
 
-			return items.Remove(itemName);
+            itemsDic[itemName]--;
+            if (itemsDic[itemName] == 0)
+            {
+                itemsDic.Remove(itemName);
+            }
+
+			return true;
 		}
 
 		public void ShowBag()

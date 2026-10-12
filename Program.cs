@@ -100,18 +100,16 @@ namespace cs_foundation_1
                         round++;
                         break;
                     case "2":
-                        if (player.PotionCount > 0)
+                        if (player.TryHeal())
                         {
-                            player.Heal();
                             enemy.Attack(player);
                             round++;
-                            break;
                         }
                         else
                         {
-                            Console.WriteLine("当前无药水！");
-                            break;
+                            Console.WriteLine("无法使用药水！");
                         }
+                        break;
                     case "3":
                         status.Show(player, enemy);
                         Console.WriteLine(" ");
